@@ -32,11 +32,16 @@ Widget getListView() {
         ),
         borderRadius: BorderRadius.circular(12),
       ),
-      child: ListTile(
-        dense: true,
-        leading: Text(listItems[index]),
-        title: Text("Intoduction to Java"),
-        trailing: Icon(Icons.alarm_outlined),
+      child: InkWell(
+        onTap: () {
+          print("Hello Mister");
+        },
+        child: ListTile(
+          dense: true,
+          leading: Text(listItems[index]),
+          title: Text("Intoduction to Java"),
+          trailing: Icon(Icons.alarm_outlined),
+        ),
       ),
     );
   });
@@ -135,7 +140,14 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                   ),
                 ),
-                Container(height: 150, child: getListView()),
+                Container(
+                    height: 150,
+                    child: InkWell(
+                      onTap: () {
+                        print("Move to New Place");
+                      },
+                      child: getListView(),
+                    )),
                 SizedBox(
                   height: 5,
                 ),
