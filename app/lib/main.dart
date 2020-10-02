@@ -1,9 +1,8 @@
-
 //import 'dart:js';
 
 import 'package:Connects2/payments.dart';
 import 'course.dart';
-import 'dashboard.dart';
+import 'dashboard/dashboard.dart';
 import 'home.dart';
 import 'signin.dart';
 import 'signup.dart';
@@ -14,20 +13,16 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
 
-
   runApp(MaterialApp(
-    initialRoute: "course",
+    initialRoute: "dashboard",
     routes: {
-      "home" : (context) => HomePage(),
-      "signup" : (context) => Signuppage(),
-      "signin" : (context) => SignInPage(),
-      "dashboard" :(context) => DashboardPage(),
-      "course" :(context) => CoursePage(),
-      "payments" :(context) => PaymentPage(),
+      "home": (context) => HomePage(),
+      "signup": (context) => Signuppage(),
+      "signin": (context) => SignInPage(),
+      "dashboard": (context) => DashboardPage(),
+      "course": (context) => CoursePage(),
+      "payments": (context) => PaymentPage(),
     },
     debugShowCheckedModeBanner: false,
-    )
-  );
- }
-
-
+  ));
+}

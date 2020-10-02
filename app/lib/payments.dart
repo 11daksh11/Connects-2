@@ -1,4 +1,4 @@
-import 'package:Connects2/dashboard.dart';
+import 'dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:statusbar/statusbar.dart';
 
@@ -11,13 +11,12 @@ class _PaymentPageState extends State<PaymentPage> {
   String cardno;
   String name;
   String cvv;
-  String expdate; 
+  String expdate;
 
-   @override
+  @override
   void initState() {
     super.initState();
-    StatusBar.color(Color.fromRGBO(90, 200, 250, 1)
-    );
+    StatusBar.color(Color.fromRGBO(90, 200, 250, 1));
   }
 
   @override
@@ -30,69 +29,62 @@ class _PaymentPageState extends State<PaymentPage> {
         //height: 300,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget> [
+          children: <Widget>[
             TextField(
-                decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Card Holder's name"
-                    ),
-                    onChanged: (value){
-                        name = value;
-                      },
-                    ),
-                TextField(
-                decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Card-number"
-                    ),
-                    onChanged: (value){
-                        cardno = value;
-                      },
-                    ),
-                 Row(
-                   children: <Widget>[
-                     Container(
-                       width: 200,
-                       child: TextField(
-                         decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "CVV"
-                    ),
-                    onChanged: (value){
-                          cvv = value;
-                        },
-                       ),
-                     ),
-                      Container(
-                        width: 200,
-                        child: TextField(
-                decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "MM/YYYY"
-                    ),
-                    onChanged: (value){
-                          expdate = value;
-                        },
-                    ),
-                   ),
-                  ],
-                )  ,
-             SizedBox(
-               width: 200,
-                  child: FlatButton(onPressed: (){
-                    Navigator.pushNamed(context, "dashboard");
-                  }, 
-                  child: Text("Confirm"),
-                  
-                  color: Color.fromRGBO(100, 210, 255, 1),  
-                   ),
+              decoration: InputDecoration(
+                  border: InputBorder.none, hintText: "Card Holder's name"),
+              onChanged: (value) {
+                name = value;
+              },
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  border: InputBorder.none, hintText: "Card-number"),
+              onChanged: (value) {
+                cardno = value;
+              },
+            ),
+            Row(
+              children: <Widget>[
+                Container(
+                  width: 200,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none, hintText: "CVV"),
+                    onChanged: (value) {
+                      cvv = value;
+                    },
+                  ),
                 ),
-                 FlatButton(onPressed: (){
-                   Navigator.pushNamed(context, "dashboard");
-                   print('hello');
-                   }, 
-                   child: Text('Cancel Payment'),
-                   ),     
+                Container(
+                  width: 200,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none, hintText: "MM/YYYY"),
+                    onChanged: (value) {
+                      expdate = value;
+                    },
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: 200,
+              child: FlatButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "dashboard");
+                },
+                child: Text("Confirm"),
+                color: Color.fromRGBO(100, 210, 255, 1),
+              ),
+            ),
+            FlatButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "dashboard");
+                print('hello');
+              },
+              child: Text('Cancel Payment'),
+            ),
           ],
         ),
       ),

@@ -17,10 +17,15 @@ class chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 75,
+      margin: EdgeInsets.all(4),
+      width: MediaQuery.of(context).size.width,
+      height: 100,
       decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/11.png"))),
+        image: DecorationImage(
+          image: AssetImage("assets/11.png"),
+          fit: BoxFit.fill,
+        ),
+      ),
     );
   }
 }
